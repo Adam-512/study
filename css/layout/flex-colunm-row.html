@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .wraper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: calc(800px + 15px);
+    background-color: cadetblue;
+    padding: 20px;
+  }
+
+  .item {
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .item:nth-of-type(4n) {
+    margin-right: 0;
+  }
+</style>
+
+<body>
+  <div class="wraper">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+
+</html>
