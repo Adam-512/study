@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .wrap1 {
+    background-color: antiquewhite;
+  }
+
+  .box1 {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    float: left;
+  }
+
+  .text1 {
+    overflow: auto;
+  }
+
+  .wrap2 {
+    margin-top: 50px;
+  }
+
+  .bfc {
+    /* overflow 不为visiable */
+    /* overflow: hidden; */
+    overflow: auto;
+  }
+
+  /* .bfc{ */
+  /* inline-block */
+  /* grid */
+  /* table */
+  /* display: flex; */
+  /* } */
+  /* .bfc{
+    position: absolute;
+  } */
+
+  /* .bfc{
+    float: left;
+  } */
+</style>
+
+<body>
+  <div>
+    <h3>左侧固定，右侧自适应两列布局</h3>
+    <h3>阻止浮动元素覆盖右侧正常元素</h3>
+    <div class="wrap1 bfc">
+      <div class="box1"></div>
+      <p class="text1">没有设置浮动的，正常文字元素,没有设置浮动的，正常文字元素,没有设置浮动的，正常文字元素</p>
+    </div>
+  </div>
+  <div class="wrap2">
+    <hr />
+    <h3>消除边距重叠</h3>
+    <div class="bfc">
+      <p style="margin-bottom:30px;background-color: aquamarine;">margin-bottom:30px</p>
+    </div>
+    <div class="bfc">
+      <p style="margin-top:50px;background-color: lightpink;">margin-top:50px</p>
+    </div>
+  </div>
+</body>
+
+</html>
