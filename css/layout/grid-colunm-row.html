@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,35 +8,70 @@
   <title>Document</title>
 </head>
 <style>
-  .wraper{
-    box-sizing: border-box;
-    padding:20px;
-
-    display: grid;
-    grid-template-columns: repeat(5,calc(20% - 7.5px));
-    grid-template-rows: repeat(3,100px);
-
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    /* grid-gap:10px; */
-
-    background-color: cadetblue;
-  }
-  .item{
+  .item {
     background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrap2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 5px;
+    /* 写法和grid-template-rows repeat 一致 */
+    grid-auto-rows: 30px;
+  }
+
+  .wrap-22 .item:nth-of-type(3) {
+    grid-column-start: span 3;
+  }
+  .wrap-22{
+    grid-auto-flow: row dense;
+  }
+
+  .wrap3 {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-auto-rows: 30px;
+    grid-gap: 5px;
   }
 </style>
+
 <body>
-  <div class="wraper">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+  <h3>列个数自适应</h3>
+  <div class="wrap2">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+  </div>
+  <h3>列个数自适应（宽度不等）</h3>
+  <div class="wrap2 wrap-22">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+  </div>
+  <h3>元素宽度百分比</h3>
+  <div class="wrap3">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
   </div>
 </body>
+
 </html>
