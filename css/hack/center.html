@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .box {
+      background-color: lightgrey;
+      margin-bottom: 30px;
+      width: 300px;
+      height: 300px;
+      margin-right: 50px;
+      margin-bottom: 30px;
+    }
+    .content1 {
+      position: relative;
+    }
+    .content1 span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .content2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content3 {
+      position: relative;
+    }
+    .content3 span {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      left: 50%;
+      top: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+    }
+
+    .content4 {
+      text-align: center;
+    }
+
+    .content5{
+      position: relative;
+    }
+    .content5 span {
+      display: block;
+      margin: 0 auto;
+      width: 50px;
+    }
+    .content5 em{
+      position: absolute;
+    }
+
+    .content6 span{
+      line-height: 300px;
+    }
+
+    .content7{
+      display: table;
+    }
+    .content7 span{
+      display: table-cell;
+      vertical-align: middle;
+    }
+  </style>
+  <body>
+    <p>水平垂直居中</p>
+    <div class="wrap">
+      <div class="box content1">
+        <em>absolute+translate</em>
+        <span>居中元素</span>
+      </div>
+      <div class="box content2">
+        <em>flex</em>
+        <span>居中元素</span>
+      </div>
+      <div class="box content3">
+        <span>子元素计算居中元素</span>
+      </div>
+    </div>
+    <p>水平居中</p>
+    <div class="wrap">
+      <div class="box content4">
+        <em>text-align</em>
+        <span>居中元素</span>
+      </div>
+      <div class="box content5">
+        <em>margin auto</em>
+        <span>居中元素</span>
+      </div>
+    </div>
+    <p>垂直居中</p>
+    <div class="wrap">
+      <div class="box content6">
+        <em>line-height</em>
+        <span>居中元素</span>
+      </div>
+      <div class="box content7">
+        <!-- <em>table-cell</em> -->
+        <span>居中元素</span>
+      </div>
+    </div>
+  </body>
+</html>
