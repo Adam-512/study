@@ -23,6 +23,7 @@ const Alldone = function (iterables) {
           }
         }, reject);
       } else {
+        counter++;
         result[i] = p;
       }
     }
@@ -38,9 +39,13 @@ function main() {
   const p2 = new Promise((resolve) =>
     setTimeout(() => {
       resolve(2);
-    }, 3000)
+    }, 1000)
   );
-  const rp = Alldone([p1, p2]);
-  rp.then((v) => console.log(v));
+  const p3 = Promise.reject(9);
+  const rp = Alldone([0, p1, p2, 3, p3]);
+  rp.then(
+    (v) => console.log(v),
+    (err) => console.log("Promise all rejected: ", err)
+  );
 }
 main();
