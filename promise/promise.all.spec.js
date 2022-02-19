@@ -25,6 +25,9 @@ const Alldone = function (iterables) {
       } else {
         counter++;
         result[i] = p;
+        if (counter === iterables.length) {
+          resolve(result);
+        }
       }
     }
   });
