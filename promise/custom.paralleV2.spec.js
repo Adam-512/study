@@ -6,23 +6,50 @@
  * @Return:  void
  */
 
-const ParallePromise = async function (iterable, limit = 10) {
-  return new Promise((resolve, reject) => {
+const ParallePromise = async function (iterable, limit = 2) {
+  return new Promise(async (resolve, reject) => {
     const result = [];
     const executing = [];
+    let counter = 0;
     for (let p of iterable) {
       result.push(p);
       const e = p
-        .then(() => executing.splice(executing.indexOf(e), 1))
-        .finaly(() => {
-          if (result.length === iterable.length) {
-            resolve();
+        .then((value) => {
+          executing.splice(executing.indexOf(e), 1);
+          console.log(value);
+          counter++;
+        })
+        .finally(() => {
+          if (counter === iterable.length) {
+            resolve("done");
           }
         });
       executing.push(e);
       if (executing.length >= limit) {
+        console.log("并发数", executing.length);
         await Promise.race(executing);
       }
     }
   });
 };
+
+function main() {
+  const gePromise = function (interval) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(interval);
+      }, interval);
+    });
+  };
+  const ps = [1000, 6000, 1000, 7000, 5000, 2000].map((value) =>
+    gePromise(value)
+  );
+  const rp = ParallePromise(ps);
+  console.log(ps);
+  rp.then(
+    (v) => console.log(v),
+    (err) => console.log("Promise all rejected: ", err)
+  );
+}
+
+// main();
