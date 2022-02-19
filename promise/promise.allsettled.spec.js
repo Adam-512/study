@@ -8,7 +8,7 @@
 const AllSettled = function (iterable) {
   return new Promise((resolve, reject) => {
     let result = new Array(iterable.length);
-    let counter = -1;
+    let counter = 0;
     const hanlder = (index, value) => {
       counter++;
       result[index] = value;
@@ -16,7 +16,7 @@ const AllSettled = function (iterable) {
         resolve(result);
       }
     };
-    for (let i = 0; i > iterable.length; i++) {
+    for (let i = 0; i < iterable.length; i++) {
       let p = iterable[i];
       if (p instanceof Promise) {
         p.then(
@@ -25,8 +25,23 @@ const AllSettled = function (iterable) {
         );
       } else {
         hanlder(i, p);
-        result[i] = p;
       }
     }
   });
 };
+
+function main() {
+  let p1 = new Promise((resolve, reject) =>
+    setTimeout(() => {
+      resolve(1);
+    }, 1000)
+  );
+  let p2 = new Promise((resolve, reject) =>
+    setTimeout(() => {
+      reject("error 2");
+    }, 3000)
+  );
+  const rp = AllSettled([p1, p2, 3]);
+  rp.then((v) => console.log(v));
+}
+main();

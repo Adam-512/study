@@ -48,4 +48,4 @@ function main() {
     (err) => console.log("Promise all rejected: ", err)
   );
 }
-main();
+// main();

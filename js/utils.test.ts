@@ -29,12 +29,12 @@ const t = debounce(() => {
 //   t();
 // }, 1000);
 
-const t2 = throttle(() => {
-  console.log("t2");
-}, 1000);
-t2();
-t2();
-t2();
-t2();
-t2();
-t2();
+// const t2 = throttle(() => {
+//   console.log("t2");
+// }, 1000);
+// t2();
+// t2();
+// t2();
+// t2();
+// t2();
+// t2();

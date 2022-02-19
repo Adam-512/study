@@ -20,4 +20,4 @@ function sum(n, total = 0) {
   return n + sum(n - 1, total);
 }
 
-console.log(sum(3));
+// console.log(sum(3));
