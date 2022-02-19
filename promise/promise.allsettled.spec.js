@@ -44,4 +44,4 @@ function main() {
   const rp = AllSettled([p1, p2, 3]);
   rp.then((v) => console.log(v));
 }
-main();
+// main();

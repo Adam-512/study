@@ -5,7 +5,7 @@
  * @Return:  { Promise<any> | any}
  */
 
-const PromiseAny = function () {
+const PromiseAny = function (iterables) {
   return new Promise((resolve, reject) => {
     let counter = 0;
     for (let i = 0; i < iterables.length; i++) {
@@ -23,3 +23,19 @@ const PromiseAny = function () {
     }
   });
 };
+
+function main() {
+  let p1 = new Promise((resolve, reject) =>
+    setTimeout(() => {
+      resolve(1);
+    }, 1000)
+  );
+  let p2 = new Promise((resolve, reject) =>
+    setTimeout(() => {
+      reject("error 2");
+    }, 3000)
+  );
+  const rp = PromiseAny([p1, p2]);
+  rp.then((v) => console.log(v));
+}
+// main();
