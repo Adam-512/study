@@ -1,6 +1,6 @@
 /**
  * javascript comment
- * @Author: flydreame
+ * @Author: chenhui
  * @Description 思路类似批量搬运，效率较低
  * @Param: {Array<Promise>}  一个promise数组，限制最大并发10个进行处理
  * @Return:  void
