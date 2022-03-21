@@ -12,12 +12,12 @@ const ParallePromise = async function (iterable, limit = 2) {
     const executing = [];
     let counter = 0;
     for (let p of iterable) {
-      result.push(p);
       const e = p
         .then((value) => {
           executing.splice(executing.indexOf(e), 1);
           console.log(value);
           counter++;
+          result.push(p);
         })
         .finally(() => {
           if (counter === iterable.length) {
