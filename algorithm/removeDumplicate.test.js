@@ -20,6 +20,6 @@ function removeDuplicates(nums) {
 (function () {
   let arr = [1, 1, 1, 2, 3, 3, 4, 4, 4, 5];
   let len = removeDuplicates(arr);
-  console.log(len);
-  console.log(arr);
+  // console.log(len);
+  // console.log(arr);
 })();
