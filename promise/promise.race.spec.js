@@ -1,8 +1,9 @@
 /**
- * javascript comment
- * @Author: chenhui
- * @Param: {Array} iterable of Promise
- * @Return:  {Promise<any>}
+ * 传入数组
+ * then 接收两个参数，启动全部Promise
+ * 非Promise直接reolve
+ * race是获取最快执行的结果，不管成功还是失败
+ * {Array<any>} pr
  */
 
 const Race = function (iterable) {
