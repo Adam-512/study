@@ -33,5 +33,5 @@ function maxProfit2(arrs) {
   // let arr2 = [7,1,5,3,6,4]
   let arr2 = [7, 6, 4, 3, 1];
   let max = maxProfit2(arr2);
-  console.log(max);
+  // console.log(max);
 })();
