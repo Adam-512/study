@@ -35,12 +35,12 @@ function findLost(arr, n) {
     let s = arr[i] ? `^${arr[i]}` : "";
     res += `^${nums[i]}${s}`;
   }
-  console.log(res);
+  // console.log(res);
   return eval(res);
 }
 
 (function () {
   let arr = [5, 2, 4, 1, 6];
   let res = findLost(arr, 6);
-  console.log(res);
+  // console.log(res);
 })();
