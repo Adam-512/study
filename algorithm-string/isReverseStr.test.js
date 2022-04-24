@@ -27,5 +27,5 @@ function isReverseStr(str = "") {
   var s = "race a car";
   // var s = "A man, a plan, a canal: Panama";
   var res = isReverseStr(s);
-  console.log(res);
+  // console.log(res);
 })();
