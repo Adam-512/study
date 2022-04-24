@@ -13,7 +13,6 @@ function samestr(s1 = "", t1 = "") {
   for (let i = 0; i < s1.length; i++) {
     arr[s1.charCodeAt(i) - "a".charCodeAt(0)]++;
   }
-  console.log(arr);
 
   for (let i = 0; i < t1.length; i++) {
     arr[t1.charCodeAt(i) - "a".charCodeAt(0)]--;
@@ -23,12 +22,12 @@ function samestr(s1 = "", t1 = "") {
   }
   return true;
 }
-
+//[0,0,0,0,1,0,0,0....]
 (function () {
   // var s = "anagram",
   //   t = "nagaram";
   var s = "rat",
     t = "car";
   var res = samestr(s, t);
-  console.log(res);
+  // console.log(res);
 })();
