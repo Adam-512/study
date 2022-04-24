@@ -29,7 +29,7 @@ function findTheOne(arr) {
 
 function findLost(arr, n) {
   let nums = [...Array.from({ length: n + 1 }).keys()].slice(1);
-  console.log(nums);
+  // console.log(nums);
   let res = "0";
   for (let i = 0; i < nums.length; i++) {
     let s = arr[i] ? `^${arr[i]}` : "";

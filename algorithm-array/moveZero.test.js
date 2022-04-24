@@ -19,5 +19,5 @@ function moveZero(arr) {
 (function () {
   let arr = [0, 1, 0, 3, 12];
   moveZero(arr);
-  console.log(arr);
+  // console.log(arr);
 })();

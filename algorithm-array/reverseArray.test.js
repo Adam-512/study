@@ -21,7 +21,7 @@ function rotate(arr, k) {
   reverse(arr, 0, arr.length - 1);
   reverse(arr, 0, k - 1);
   reverse(arr, k, arr.length - 1);
-  console.log(arr);
+  // console.log(arr);
 }
 
 (function () {
