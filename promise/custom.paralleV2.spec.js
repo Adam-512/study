@@ -9,19 +9,25 @@
 const ParallePromise = async function (iterable, limit = 2) {
   return new Promise(async (resolve, reject) => {
     const result = [];
+    const errors = [];
     const executing = [];
     let counter = 0;
     for (let p of iterable) {
       const e = p
         .then((value) => {
-          executing.splice(executing.indexOf(e), 1);
-          console.log(value);
-          counter++;
-          result.push(p);
+          result.push(value);
+        })
+        .catch((error) => {
+          errors.push(error);
         })
         .finally(() => {
+          counter++;
+          executing.splice(executing.indexOf(e), 1);
           if (counter === iterable.length) {
-            resolve("done");
+            resolve({
+              success: result.length,
+              error: errors.length
+            });
           }
         });
       executing.push(e);
@@ -35,7 +41,11 @@ const ParallePromise = async function (iterable, limit = 2) {
 
 function main() {
   const gePromise = function (interval) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
+      if (interval === 1000) {
+        reject(1000);
+        return;
+      }
       setTimeout(() => {
         resolve(interval);
       }, interval);
@@ -52,4 +62,4 @@ function main() {
   );
 }
 
-// main();
+main();
